@@ -25,7 +25,7 @@ for i in range(100):
 		ct = datetime.datetime.now()
 		p = s.results.ping
 		print("%.2f\t%.2f\t%.2f\t%s"%(d,u,p,ct))
-		fid.write("%.2f\t%.2f\t%.2f\t%s"%(d,u,p,ct))
+		fid.write("%.2f\t%.2f\t%.2f\t%s\n"%(d,u,p,ct))
 		sleep(10) # wait interval
 	except KeyboardInterrupt:
 		break
