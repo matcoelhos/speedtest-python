@@ -19,7 +19,7 @@ print('Starting Test')
 for i in range(100):
 	try:
 		s.get_best_server()
-		sleep(5) # time for settling the best server
+		sleep(10) # time for settling the best server
 		d = float(s.download(threads=threads))/1000000
 		u = float(s.upload(pre_allocate=False,threads=threads))/1000000
 		ct = datetime.datetime.now()
