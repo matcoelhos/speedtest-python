@@ -1,4 +1,5 @@
 import speedtest
+import datetime
 
 servers = []
 # If you want to test against a specific server
@@ -17,9 +18,10 @@ for i in range(100):
 		s.get_best_server()
 		d = float(s.download(threads=threads))/1000000
 		u = float(s.upload(pre_allocate=False,threads=threads))/1000000
+		ct = datetime.datetime.now()
 		p = s.results.ping
-		print("%.2f\t%.2f\t%.2f"%(d,u,p))
-		fid.write("%.2f\t%.2f\t%.2f"%(d,u,p))
+		print("%.2f\t%.2f\t%.2f\t%s"%(d,u,p,ct))
+		fid.write("%.2f\t%.2f\t%.2f\t%s"%(d,u,p,ct))
 	except KeyboardInterrupt:
 		break
 
